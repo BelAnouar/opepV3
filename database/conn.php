@@ -11,4 +11,6 @@ $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 
 require_once  __DIR__ . "/user.php";
 
+require __DIR__ . "./categories.php"
+
 ?>

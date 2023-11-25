@@ -30,12 +30,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             echo $errorMsg = "Email or Password is incorrect! Please try again. ";
         } else {
 
+            $_SESSION['email'] = $email;
 
-            if ($result['status'] == 403) {
+            if ($result['status'] == 401) {
                 header("Location: role.php");
             } else {
-                $_SESSION['email'] = $email;
-                header("Location: index.php");
+                if ($result['status'] != 403) {
+                    if ($result['role_id'] == 3) {
+                        header("Location: index.php");
+                    } else {
+                        header("Location: dashboard.php");
+                    }
+                } else {
+                    header("Location: 403.php");
+                }
             }
         }
     }
