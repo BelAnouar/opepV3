@@ -12,11 +12,11 @@
     <div class="flex ">
         <div class=' w-1/5 h-screen p-4 bg-white border-r border-gray-300 flex flex-col justify-between'>
             <div class="flex flex-col items-center">
-                <a href="/" class='bg-purple-800 p-3 rounded-lg inline-block'>
+                <a href="./../dashboard.php" class='bg-purple-800 p-3 rounded-lg inline-block'>
                     kdlj
                 </a>
-                <hr class='border-b border-gray-200 w-full my-3'>
-                <a href="/" class="bg-gray-100 text-gray-800 my-2 p-3 rounded-lg inline-block">
+                <hr class='border-b border-gray-200 w-full my-6'>
+                <a href="./../dashboard.php" class="bg-gray-100 text-gray-800 my-2 p-3 rounded-lg inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                     </svg>
@@ -28,7 +28,7 @@
                     </svg>
 
                 </a>
-                <a href="/addjob" class="bg-gray-100 text-gray-800 my-2 p-3 rounded-lg inline-block">
+                <a href="./../product.php" class="bg-gray-100 text-gray-800 my-2 p-3 rounded-lg inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                     </svg>

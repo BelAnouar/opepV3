@@ -59,6 +59,31 @@ function getUsersByEmail($email)
         echo "SQL prepare error: " . $conn->error;
     }
 }
+function getUserByEmail($email)
+{
+    global $conn;
+    $sql = $conn->prepare("SELECT idUser FROM users WHERE email = ?");
+
+    if ($sql) {
+        $sql->bind_param("s", $email);
+        $sql->execute();
+        $result = $sql->get_result();
+
+        if ($result->num_rows > 0) {
+
+            $user = $result->fetch_assoc();
+            return $user;
+        } else {
+
+            return null;
+        }
+    } else {
+
+        echo "SQL prepare error: " . $conn->error;
+        return null;
+    }
+}
+
 function UpdateRoleByEmail($email, $status, $role)
 {
     global $conn;

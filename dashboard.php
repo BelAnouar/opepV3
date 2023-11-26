@@ -44,23 +44,23 @@ include "./partials/_sidbar.php";
         </div>
         <div class='lg:col-span-2 col-span-1 bg-blue-200 flex justify-between w-full border p-4 rounded-lg'>
             <div class='flex flex-col w-full pb-4'>
-                <p class='text-2xl font-bold'>sdlqkdlkdlsskw}</p>
-                <p class='text-gray-600'>Interviews Scheduled</p>
+                <p class='text-2xl font-bold'>?</p>
+                <p class='text-gray-600'>Plant</p>
             </div>
             <div class='bg-blue-400 flex justify-center items-center p-4 rounded-lg'>
                 <span class='text-blue-700 text-lg'>
-                    <PermContactCalendarIcon fontSize='large' />
+                    Icon
                 </span>
             </div>
         </div>
         <div class='lg:col-span-2 col-span-1 bg-yellow-200 flex justify-between w-full border p-4 rounded-lg'>
             <div class='flex flex-col w-full pb-4'>
-                <p class='text-2xl font-bold'>sdlqkdlkdlssk}</p>
-                <p class='text-gray-600'>Jobs Declined</p>
+                <p class='text-2xl font-bold'>?</p>
+                <p class='text-gray-600'>cate</p>
             </div>
             <div class='bg-yellow-400 flex justify-center items-center p-4 rounded-lg'>
                 <span class='text-yellow-700 text-lg'>
-                    <LayersClearIcon fontSize='large' />
+                    icon
                 </span>
             </div>
         </div>
@@ -157,88 +157,7 @@ include "./partials/_sidbar.php";
                                     </td>
                                 </tr>
                             <?php } ?>
-                            <!-- <tr>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-10 h-10">
-                                            <img class="w-full h-full rounded-full" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80" alt="" />
-                                        </div>
-                                        <div class="ml-3">
-                                            <p class="text-gray-900 whitespace-no-wrap">
-                                                Blake Bowman
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Editor</p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Jan 01, 2020
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                        <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                        <span class="relative">Activo</span>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-10 h-10">
-                                            <img class="w-full h-full rounded-full" src="https://images.unsplash.com/photo-1540845511934-7721dd7adec3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80" alt="" />
-                                        </div>
-                                        <div class="ml-3">
-                                            <p class="text-gray-900 whitespace-no-wrap">
-                                                Dana Moore
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Editor</p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Jan 10, 2020
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <span class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
-                                        <span aria-hidden class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
-                                        <span class="relative">Suspended</span>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-10 h-10">
-                                            <img class="w-full h-full rounded-full" src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80" alt="" />
-                                        </div>
-                                        <div class="ml-3">
-                                            <p class="text-gray-900 whitespace-no-wrap">
-                                                Alonzo Cox
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Admin</p>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Jan 18, 2020</p>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                        <span aria-hidden class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                        <span class="relative">Inactive</span>
-                                    </span>
-                                </td>
-                            </tr> -->
+
                         </tbody>
                     </table>
 
