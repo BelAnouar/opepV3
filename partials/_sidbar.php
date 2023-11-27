@@ -12,8 +12,8 @@
     <div class="flex ">
         <div class=' w-1/5 h-screen p-4 bg-white border-r border-gray-300 flex flex-col justify-between'>
             <div class="flex flex-col items-center">
-                <a href="./../dashboard.php" class='bg-purple-800 p-3 rounded-lg inline-block'>
-                    kdlj
+                <a href="./../dashboard.php">
+                    <img class="h-20" src=" ./../assets/images/logo.png" alt="logo">
                 </a>
                 <hr class='border-b border-gray-200 w-full my-6'>
                 <a href="./../dashboard.php" class="bg-gray-100 text-gray-800 my-2 p-3 rounded-lg inline-block">

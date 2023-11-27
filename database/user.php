@@ -152,3 +152,22 @@ function UpdateStatusByidUSer($status, $iduser)
         echo "SQL prepare error: " . $conn->error;
     }
 }
+
+
+
+
+function getRoleByEmail($email)
+{
+    global $conn;
+    $sql = $conn->prepare("SELECT role_id FROM users WHERE email = ?");
+
+    if ($sql) {
+        $sql->bind_param("s", $email);
+        $sql->execute();
+        $result = $sql->get_result();
+        $row = $result->fetch_assoc();
+        return $row;
+    } else {
+        echo "SQL prepare error: " . $conn->error;
+    }
+}

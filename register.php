@@ -1,6 +1,7 @@
 <?php
 
 require_once "./database/conn.php";
+session_start();
 $firstN_err = "";
 $lastN_err = "";
 $email_err = "";
@@ -37,6 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     if (empty($firstN_err) && empty($lastN_err) && empty($email_err) && empty($password_err)) {
         $rest =  register($firstName, $lastName, $email, $password);
         if ($rest) {
+
+            $_SESSION["email"] = $email;
             header("Location: role.php");
         }
     }
@@ -76,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
                                         <div class="mb-4">
                                             <label for="firstName" class="text-sm">First Name</label>
-                                            <input type="text" name="FirstName" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none focus:border-red-500" id="firstName" placeholder="Enter your first name" />
+                                            <input type="text" name="FirstName" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $firstN_err ? 'border-red-500' : '' ?>" id="firstName" placeholder="Enter your first name" />
                                             <div>
                                                 <?php echo $firstN_err; ?>
                                             </div>
@@ -84,25 +87,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
                                         <div class="mb-4">
                                             <label for="lastName" class="text-sm">Last Name</label>
-                                            <input type="text" name="LastName" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none focus:border-red-500" id="lastName" placeholder="Enter your last name" />
+                                            <input type="text" name="LastName" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $lastN_err ? 'border-red-500' : '' ?>" id="lastName" placeholder="Enter your last name" />
+                                            <div>
+                                                <?php echo $lastN_err; ?>
+                                            </div>
                                         </div>
 
                                         <div class="mb-4">
                                             <label for="email" class="text-sm">Email Address</label>
-                                            <input type="email" name="email" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none focus:border-red-500" id="email" placeholder="Enter your email address" />
+                                            <input type="email" name="email" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $email_err ? 'border-red-500' : '' ?>" id="email" placeholder="Enter your email address" />
+                                            <div>
+                                                <?php echo $email_err; ?>
+                                            </div>
                                         </div>
 
                                         <div class="mb-4">
                                             <label for="password" class="text-sm">Password</label>
-                                            <input type="password" name="password" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none focus:border-red-500" id="password" placeholder="Enter your password" />
+                                            <input type="password" name="password" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $password_err ? 'border-red-500' : '' ?>" id="password" placeholder="Enter your password" />
+                                            <div>
+                                                <?php echo $password_err; ?>
+                                            </div>
                                         </div>
 
                                         <div class="pt-1 mb-2">
-                                            <button name="submit" class="bg-blue-500 text-white text-lg px-6 py-3 rounded-lg" type="submit">Register</button>
+                                            <button name="submit" class=" bg-black text-white text-lg px-6 py-3 rounded-lg" type="submit">Register</button>
                                         </div>
 
                                         <p class="mb-2 pb-2">Have an account?
-                                            <a href="./login.php">Login here</a>
+                                            <a class="underline text-blue-600" href="./login.php">Login here</a>
                                         </p>
                                         <a href="#!" class="text-sm text-gray-500">Terms of use.</a>
                                         <a href="#!" class="text-sm text-gray-500">Privacy policy</a>

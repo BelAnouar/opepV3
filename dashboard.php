@@ -1,8 +1,22 @@
 <?php
 require_once "./database/conn.php";
+
+session_start();
+
+$email = $_SESSION["email"];
+
+
+if (isset($email)) {
+    $idRole = getRoleByEmail($email);
+    $role = $idRole['role_id'];
+    $location = match ($role) {
+        1 => header("Location:index.php"),
+        2 => header("Location: dashboard.php"),
+        default => header("Location: register.php")
+    };
+    $location;
+}
 $users = getUsers();
-
-
 if (isset($_POST['check'])) {
     $id = $_POST['check'];
     $status = 200;
@@ -93,7 +107,7 @@ include "./partials/_sidbar.php";
                                     Rol
                                 </th>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Created at
+                                    email
                                 </th>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Status
@@ -125,7 +139,7 @@ include "./partials/_sidbar.php";
                                         <p class="text-gray-900 whitespace-no-wrap"><?php
                                                                                     $role_id = $user['role_id'];
                                                                                     $role = getRoles($role_id);
-                                                                                    echo $role['ROLE'];
+                                                                                    echo $role ? $role['ROLE'] : "no role";
                                                                                     ?></p>
                                     </td>
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">

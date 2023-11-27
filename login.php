@@ -58,61 +58,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <section class="vh-100">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col">
-                    <div class="card rounded-3">
-                        <div class="row g-0">
-                            <div class="col-md-6 col-lg-6 d-none d-md-block">
-                                <img src="./assets/images/login.jpg" alt="Register" class="img-fluid rounded-1" />
+    <section class="h-screen">
+        <div class=" container mx-auto h-full">
+            <div class="flex h-full">
+                <div class="flex-1">
+                    <div class="rounded-md border border-gray-300">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="hidden md:block md:w-1/2">
+                                <img src="./assets/images/login.jpg" alt="Register" class="w-full rounded-lg" />
                             </div>
-                            <div class="col-md-6 col-lg-6 d-flex align-items-center">
-                                <div class="card-body p-4 p-lg-5 text-dark">
+                            <div class="md:w-1/2 flex items-center">
+                                <div class="p-4 md:p-5 text-gray-900 w-full">
+                                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method='post'>
 
-                                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
-
-                                        <div class="d-flex align-items-center mb-3 pb-1">
-
-                                            <span class="h1 fw-bold mb-0 ms-1">O'PEP</span>
+                                        <div class="flex items-center mb-3 pb-1">
+                                            <span class="text-4xl font-bold mb-0 ml-1">O'PEP</span>
                                         </div>
 
-                                        <h5 class="fw-normal mb-3 pb-3">Sign In</h5>
+                                        <h5 class="font-normal mb-3 pb-3">Sign In</h5>
 
 
 
-                                        <div class="form-floating mb-4">
-                                            <input type="email" name="email" class="form-control form-control-lg border <?php echo $email_err ? 'border-danger' : null; ?>" id="floatingEmail" placeholder="Email Address" />
-                                            <label for="floatingEmail">Email Address</label>
+                                        <div class="mb-4">
+                                            <label for="email" class="text-sm">Email Address</label>
+                                            <input type="email" name="email" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $email_err ? 'border-red-500' : '' ?>" id="email" placeholder="Enter your email address" />
+                                            <div>
+                                                <?php echo $email_err; ?>
+                                            </div>
                                         </div>
 
-                                        <div class="form-floating mb-4">
-                                            <input type="password" name="password" class="form-control form-control-lg border <?php echo $password_err ? 'border-danger' : null; ?>" id="floatingPassword" placeholder="Password" />
-                                            <label for="floatingPassword">Password</label>
+                                        <div class="mb-4">
+                                            <label for="password" class="text-sm">Password</label>
+                                            <input type="password" name="password" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $password_err ? 'border-red-500' : '' ?>" id="password" placeholder="Enter your password" />
+                                            <div>
+                                                <?php echo $password_err; ?>
+                                            </div>
                                         </div>
-
-
 
                                         <div class="pt-1 mb-2">
-                                            <button name="submit" class="btn btn-dark btn-lg btn-block" type="submit">login</button>
+                                            <button name="submit" class=" bg-black text-white text-lg px-6 py-3 rounded-lg" type="submit">Register</button>
                                         </div>
 
-                                        <p class="mb-2 pb-lg-2">Have an account?
-                                            <a href="./register.php">Login here</a>
+                                        <p class="mb-2 pb-2">Don't have an account yet?
+                                            <a class="underline text-blue-600" href="./register.php">Register here</a>
                                         </p>
-                                        <a href="#!" class="small text-muted">Terms of use.</a>
-                                        <a href="#!" class="small text-muted">Privacy policy</a>
+                                        <a href="#!" class="text-sm text-gray-500">Terms of use.</a>
+                                        <a href="#!" class="text-sm text-gray-500">Privacy policy</a>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

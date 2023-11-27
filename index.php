@@ -1,6 +1,19 @@
 <?php
 require_once "./partials/_header.php";
 require_once "./database/conn.php";
+
+
+if (isset($email)) {
+    $idRole = getRoleByEmail($email);
+    $role = $idRole['role_id'];
+    $location = match ($role) {
+        1 => header("Location:index.php"),
+        2 => header("Location: dashboard.php"),
+        default => header("Location: register.php")
+    };
+    $location;
+}
+
 $plantes = getPlantes();
 $categories = getCategories();
 if (isset($_GET["filter"])) {

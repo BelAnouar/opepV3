@@ -2,8 +2,8 @@
 require_once "./database/conn.php";
 include_once "./partials/_header.php";
 
-session_start();
-$email = $_SESSION["email"];
+
+
 
 if (isset($_POST["client"])) {
     $result = UpdateRoleByEmail($email, 200, 3);

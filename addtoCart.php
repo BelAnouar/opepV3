@@ -3,8 +3,12 @@
 
 $paniers = getPlantsByidUser($user_id);
 
+function sum($carry, $item)
+{
+    $carry += $item["price"];
 
-
+    return $carry;
+}
 
 ?>
 
@@ -35,42 +39,46 @@ $paniers = getPlantsByidUser($user_id);
                             <div class="mt-8">
                                 <div class="flow-root">
                                     <ul role="list" class="-my-6 divide-y divide-gray-200">
-                                        <?php foreach ($paniers as $panier) { ?>
+                                        <?php if (count($paniers) > 0) { ?>
+                                            <?php foreach ($paniers as $panier) { ?>
+                                                <?php $user_id = $panier['user_id']; ?>
+                                                <li class="flex py-6">
+                                                    <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                        <img src="<?php echo $panier['image']; ?>" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
+                                                    </div>
+
+                                                    <div class="ml-4 flex flex-1 flex-col">
+                                                        <div>
+                                                            <div class="flex justify-between text-base font-medium text-gray-900">
+                                                                <h3>
+                                                                    <?php echo $panier['nomPlante']; ?>
+                                                                </h3>
+                                                                <p class="ml-4"> <?php echo $panier['price']; ?>$</p>
+                                                            </div>
+                                                            <p class="mt-1 text-sm text-gray-500">Salmon</p>
+                                                        </div>
+
+                                                        <div class="flex flex-1 items-end justify-between text-sm">
+                                                            <p class="text-gray-500">Qty 1</p>
+
+                                                            <div class="flex">
+                                                                <form action="./index.php" method="post">
+                                                                    <input type="hidden" name="Remove" value="<?php echo   $panier['idPanier']; ?>">
+                                                                    <button type="submit" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                            <?php     }  ?>
+
+                                        <?php  } else { ?>
 
                                             <li class="flex py-6">
-                                                <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                    <img src="<?php echo $panier['image']; ?>" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
-                                                </div>
-
-                                                <div class="ml-4 flex flex-1 flex-col">
-                                                    <div>
-                                                        <div class="flex justify-between text-base font-medium text-gray-900">
-                                                            <h3>
-                                                                <?php echo $panier['nomPlante']; ?>
-                                                            </h3>
-                                                            <p class="ml-4"> <?php echo $panier['price']; ?>$</p>
-                                                        </div>
-                                                        <p class="mt-1 text-sm text-gray-500">Salmon</p>
-                                                    </div>
-                                                    <div class="flex flex-1 items-end justify-between text-sm">
-                                                        <p class="text-gray-500">Qty 1</p>
-
-                                                        <div class="flex">
-                                                            <form action="./index.php" method="post">
-                                                                <input type="hidden" name="Remove" value="<?php echo   $panier['idPanier']; ?>">
-                                                                <button type="submit" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                Cart Is Empty
                                             </li>
-
-                                        <?php     }  ?>
-
-
-
-
-
+                                        <?php   } ?>
 
                                     </ul>
                                 </div>
@@ -80,11 +88,14 @@ $paniers = getPlantsByidUser($user_id);
                         <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
                             <div class="flex justify-between text-base font-medium text-gray-900">
                                 <p>Subtotal</p>
-                                <p>$262.00</p>
+                                <p>$ <?= array_reduce($paniers, "sum", 0);
+                                        ?></p>
                             </div>
                             <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                             <div class="mt-6">
-                                <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+
+                                <a href="checkout.php?idUser=<?php echo $user_id; ?>" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+
                             </div>
 
                         </div>
