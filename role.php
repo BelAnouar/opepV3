@@ -2,7 +2,10 @@
 require_once "./database/conn.php";
 include_once "./partials/_header.php";
 
-
+$previous = "javascript:history.go(-1)";
+if (isset($_SERVER['HTTP_REFERER'])) {
+    $previous = $_SERVER['HTTP_REFERER'];
+}
 
 
 if (isset($_POST["client"])) {

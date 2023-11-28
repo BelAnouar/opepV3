@@ -14,6 +14,6 @@ if (!isset($_GET['id'])) {
     if ($result) {
         header("Location: product.php");
     } else {
-        include '../includes/errormessage.php';
+        require_once '../includes/errormessage.php';
     }
 }

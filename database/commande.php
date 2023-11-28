@@ -2,14 +2,14 @@
 
 
 
-function ajouterCommande($plant, $iduser, $dateCommande)
+function ajouterCommande($plant, $iduser)
 {
     global $conn;
 
-    $sql = $conn->prepare("INSERT INTO commande (dateCommande , idPlante , iduser) VALUES (? , ? , ?)");
+    $sql = $conn->prepare("INSERT INTO commande (idPlante , iduser ) VALUES ( ? , ?  )");
 
     if ($sql) {
-        $sql->bind_param("sii", $dateCommande, $plant, $iduser);
+        $sql->bind_param("ii", $plant, $iduser);
         $sql->execute();
         return true;
     } else {

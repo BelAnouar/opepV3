@@ -1,20 +1,23 @@
 <?php
 require_once "./database/conn.php";
-
-session_start();
-
-$email = $_SESSION["email"];
+require_once "./partials/_sidbar.php";
 
 
-if (isset($email)) {
+
+
+
+if (isset($_SESSION["email"])) {
+    $email = $_SESSION["email"];
     $idRole = getRoleByEmail($email);
     $role = $idRole['role_id'];
     $location = match ($role) {
-        1 => header("Location:index.php"),
-        2 => header("Location: dashboard.php"),
+        3 => header("Location:index.php"),
+        2 => "",
         default => header("Location: register.php")
     };
     $location;
+} else {
+    header("Location: register.php");
 }
 $users = getUsers();
 if (isset($_POST['check'])) {
@@ -33,11 +36,10 @@ if (isset($_POST['suspended'])) {
         echo "updated";
     }
 }
-include "./partials/_sidbar.php";
 
 ?>
 <main class=' w-full'>
-    <?php include "./partials/_headerDeshboard.php"; ?>
+    <?php require_once "./partials/_headerDeshboard.php"; ?>
 
 
 

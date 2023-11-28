@@ -1,5 +1,5 @@
 <?php
-include "./partials/_sidbar.php";
+require_once "./partials/_sidbar.php";
 
 require_once "./database/conn.php";
 $plantes = getPlantes();
@@ -8,7 +8,7 @@ $plantes = getPlantes();
 
 ?>
 <main class=' w-full'>
-    <?php include "./partials/_headerDeshboard.php"; ?>
+    <?php require_once "./partials/_headerDeshboard.php"; ?>
 
 
 

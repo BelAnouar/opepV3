@@ -22,10 +22,10 @@ if (isset($_POST["addPlant"])) {
     }
 }
 $categories = getCategories();
-include "./partials/_sidbar.php";
+require_once "./partials/_sidbar.php";
 ?>
 <main class=' w-full'>
-    <?php include "./partials/_headerDeshboard.php"; ?>
+    <?php require_once "./partials/_headerDeshboard.php"; ?>
 
 
 
