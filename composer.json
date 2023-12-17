@@ -1,0 +1,15 @@
+{
+    "name": "anouar_bel/breif",
+    "description": "OPEP PROJECT",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/Framework",
+            "App\\": "src/App"
+        }
+    },
+    "scripts": {
+        "OPEP": "php cli.php"
+    }
+}
