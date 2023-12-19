@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                                             <input type="email" name="email" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $email_err ? 'border-red-500' : '' ?>" id="email" placeholder="Enter your email address" />
                                             <div>
                                                 <?php echo $email_err; ?>
+                                                <div id="emailError" class="text-red-500"></div>
                                             </div>
                                         </div>
 
@@ -78,15 +79,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                                             <input type="password" name="password" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $password_err ? 'border-red-500' : '' ?>" id="password" placeholder="Enter your password" />
                                             <div>
                                                 <?php echo $password_err; ?>
+                                                <div id="passwordError" class="text-red-500"></div>
                                             </div>
                                         </div>
 
                                         <div class="pt-1 mb-2">
-                                            <button name="submit" class=" bg-black text-white text-lg px-6 py-3 rounded-lg" type="submit">Register</button>
+                                            <button id="registerBtn" name="submit" class=" bg-black text-white text-lg px-6 py-3 rounded-lg" type="submit">Login</button>
                                         </div>
 
                                         <p class="mb-2 pb-2">Don't have an account yet?
-                                            <a class="underline text-blue-600" href="register.php">Register here</a>
+                                            <a  class="underline text-blue-600" href="register.php">Register here</a>
                                         </p>
                                         <a href="#!" class="text-sm text-gray-500">Terms of use.</a>
                                         <a href="#!" class="text-sm text-gray-500">Privacy policy</a>
@@ -99,6 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             </div>
         </div>
     </section>
+<script src="/public/assets/js/main.js"></script>
+
 </body>
 
 </html>

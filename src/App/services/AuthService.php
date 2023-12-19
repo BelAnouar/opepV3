@@ -1,6 +1,7 @@
 <?php
 
 namespace Services;
+
 session_start();
 require_once "./../../Framework/Datebase.php";
 
@@ -13,7 +14,7 @@ class AuthService
     private Database $db;
     public function __construct()
     {
-        $this->db=new Database();
+        $this->db = new Database();
     }
 
     public function register($firstName, $lastName, $email, $password)
@@ -27,7 +28,7 @@ class AuthService
             'prenom' => $lastName,
             'email' => $email,
             'pass' => $hashedPassword,
-            'status'=> 401
+            'status' => 401
         ];
 
 
@@ -56,7 +57,7 @@ class AuthService
 
 
 
-    public function login($email ,$password)
+    public function login($email, $password)
     {
         $user = $this->db->query("SELECT * FROM users WHERE email = :email", [
             'email' => $email
@@ -70,7 +71,9 @@ class AuthService
         if (!$user || !$passwordsMatch) {
             throw new \Exception("password invalid");
         }
+        session_regenerate_id();
 
+        $_SESSION['user'] = $user['idUser'];
         if ($user['status'] == 401) {
             header("Location: role.php");
             exit();
@@ -87,9 +90,7 @@ class AuthService
                 header("Location: 403.php");
             }
         }
-        session_regenerate_id();
 
-        $_SESSION['user'] = $user['idUser'];
     }
 
 

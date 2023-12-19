@@ -81,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                                             <input type="text" name="FirstName" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $firstN_err ? 'border-red-500' : '' ?>" id="firstName" placeholder="Enter your first name" />
                                             <div>
                                                 <?php echo $firstN_err; ?>
+                                                <div id="firstNameError" class="text-red-500"></div>
                                             </div>
                                         </div>
 
@@ -89,6 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                                             <input type="text" name="LastName" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $lastN_err ? 'border-red-500' : '' ?>" id="lastName" placeholder="Enter your last name" />
                                             <div>
                                                 <?php echo $lastN_err; ?>
+                                                <div id="lastNameError" class="text-red-500"></div>
                                             </div>
                                         </div>
 
@@ -97,6 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                                             <input type="email" name="email" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $email_err ? 'border-red-500' : '' ?>" id="email" placeholder="Enter your email address" />
                                             <div>
                                                 <?php echo $email_err; ?>
+                                                <div id="emailError" class="text-red-500"></div>
                                             </div>
                                         </div>
 
@@ -105,11 +108,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                                             <input type="password" name="password" class="border border-gray-300 w-full py-3 px-4 rounded-lg focus:outline-none <?php echo $password_err ? 'border-red-500' : '' ?>" id="password" placeholder="Enter your password" />
                                             <div>
                                                 <?php echo $password_err; ?>
+                                                <div id="passwordError" class="text-red-500"></div>
                                             </div>
                                         </div>
 
                                         <div class="pt-1 mb-2">
-                                            <button name="submit" class=" bg-black text-white text-lg px-6 py-3 rounded-lg" type="submit">Register</button>
+                                            <button id="registerBtn" name="submit" class=" bg-black text-white text-lg px-6 py-3 rounded-lg" type="submit">Register</button>
                                         </div>
 
                                         <p class="mb-2 pb-2">Have an account?
@@ -127,7 +131,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         </div>
     </section>
 
-
+<script src="/public/assets/js/index.js"></script>
+    <script src="/public/assets/js/main.js"></script>
 </body>
 
 </html>

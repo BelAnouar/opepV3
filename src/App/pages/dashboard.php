@@ -1,14 +1,16 @@
 <?php
-
-require_once "./partials/_sidbar.php";
 require_once  "./../database/User.php";
+require_once "./partials/_sidbar.php";
 
 
-$userID=$_SESSION["user"];
+
+
 
 $user = new \App\database\User();
 $users=$user->getUsers();
 
+
+$userID=$_SESSION["user"];
 
 ?>
 <main class=' w-full'>

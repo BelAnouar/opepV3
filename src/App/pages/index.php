@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__. "./../database/Plant.php";
 require_once __DIR__. "./../database/categories.php";
-session_start();
+require_once "./partials/_header.php";
 use App\database\Plant;
 
 use \App\database\Categories;
@@ -18,7 +18,7 @@ $paniers = $plant->getPlantsByUserId($user_id);
 
 
 
-require_once "./partials/_header.php";
+
 require_once "./addtoCart.php";
 ?>
 
@@ -39,12 +39,12 @@ require_once "./addtoCart.php";
     </div>
 </section>
 <main class="m-14 ">
-<section class="my-10 flex justify-center items-center  ">
+<section class="my-28 flex justify-center items-center  ">
 
     <form action="" method="get">
         <button name="filter" value="All" class="btn-category bg-black text-white  border rounded-full px-4 py-2 text-sm font-semibold mr-4">All</button>
         <?php foreach ($categories as $cat) { ?>
-            <button name="filter" value="<?php echo $cat['idCategorie']; ?>" class="btn-category border <?php echo $cat == $cat['idCategorie']  ? 'bg-black text-white' : 'border-black text-black ' ?>  rounded-full px-4 py-2 text-sm font-semibold mr-4"><?php echo $cat['nomCateforie']; ?></button>
+            <button name="filter" value="<?php echo $cat['idCategorie']; ?>" class="btn-category border <?php echo $cat == $cat['idCategorie']  ? 'bg-black text-white' : 'border-black text-black ' ?>  rounded-full px-4 py-2 text-sm font-semibold m-2 "><?php echo $cat['nomCateforie']; ?></button>
 
         <?php } ?>
     </form>
